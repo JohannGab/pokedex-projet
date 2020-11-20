@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import Title from './components/title'
+import Home from './components/home'
 
 function App() {
+const [pokeData, setPokeData] = useState()
+
+useEffect(() => {
+  getDataPokedex()
+}, [])
+
+const getDataPokedex = () => {
+  fetch("https://pokeapi.co/api/v2/ability/?limit=20&offset=20")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          const data = result
+          setPokeData(data);
+        },
+        (error) => {
+          console.log(error, 'error');
+        }
+      )
+}
+
+console.log(pokeData, 'base')
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Title 
+        titleName= 'POKEDEX'
+        ColorLine= 'white'
+        ColorTitle = 'black'
+      />
+      <Home pokeData={pokeData}/>
+  
+    </>
   );
 }
 
