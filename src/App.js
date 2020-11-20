@@ -23,7 +23,7 @@ const getDataPokedex = () => {
       )
 }
 
-console.log(pokeData, 'base')
+console.log(pokeData, 'base ')
 
 
   return (
