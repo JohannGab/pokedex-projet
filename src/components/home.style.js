@@ -12,6 +12,7 @@ export const Container = styled.div`
     margin: 0.5rem;
     padding: 0.2rem 1rem;
     display: flex;
+    justify-content: space-between;
     &:hover {
         background-color: grey;
         color: white;
@@ -19,11 +20,14 @@ export const Container = styled.div`
 `
 
 export const ImagePoke = styled.img`
-    width: 10%;
+    width: 15%;
     margin-right: 2rem;
     border: solid 1px grey;
 `
 
-export const Title = styled.p`
+export const TitlePoke = styled.p`
+    margin-left: -20rem;
+`
 
+export const IndexPoke = styled.p`
 `
