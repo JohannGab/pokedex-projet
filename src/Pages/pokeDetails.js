@@ -36,7 +36,7 @@ const PokeDetails = ({ pokeId, pokeDetails, pokeAbility, pokeImage }) => {
                     <HeightAndWeight>Height : {pokeDetails.height}</HeightAndWeight>
                     <HeightAndWeight>Weight : {pokeDetails.weight}</HeightAndWeight>
                     {pokeAbility.abilities.map(res => 
-                        <Capacity key={res.ability.name}>{res.ability.name}</Capacity>)}
+                        <Capacity key={res.ability.name}>Capacité : {res.ability.name}</Capacity>)}
                 </ContainerDetails>
             </Container>
             <RetourHome>

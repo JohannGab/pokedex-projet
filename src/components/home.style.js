@@ -10,9 +10,11 @@ export const Container = styled.div`
     border: solid 1px grey;
     border-radius: 0.3rem;
     margin: 0.5rem;
-    padding: 0.2rem 1rem;
+    padding-right: 1rem;
     display: flex;
     justify-content: space-between;
+    background-color: yellowgreen;
+    align-items: center;
     &:hover {
         background-color: grey;
         color: white;

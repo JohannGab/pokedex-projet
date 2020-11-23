@@ -36,10 +36,12 @@ export const HeightAndWeight = styled.p`
 `
 
 export const Capacity = styled.p`
+    text-align: center;
     border: solid 1px grey;
+    border-radius: 0.3rem;
     padding: 1rem 15rem;
     @media screen and (max-width: 640px) {
-        padding: 0;
+        padding: 0.5rem;
     }
 `
 export const RetourHome = styled.div`

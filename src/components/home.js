@@ -53,6 +53,7 @@ const getDataPokeDetails = async (id) =>{
         console.log(error, 'error');
     });
 }
+
 const getDataPokeImages = async (id) =>{
     await axios.get(`https://pokeapi.co/api/v2/pokemon-form/${id}`)
     .then(res => {
