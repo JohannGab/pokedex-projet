@@ -9,10 +9,13 @@ import {
     Name,
     Type,
     HeightAndWeight,
-    Capacity
+    Capacity,
+    RetourHome,
+    LinkRetourHome
 } from './pokeDetails.style'
 
-const PokeDetails = () => {
+
+const PokeDetails = ({ pokeId, pokeDetails, pokeAbility, pokeImage }) => {
     return (
         <StyledDetails>
             <Title 
@@ -23,20 +26,22 @@ const PokeDetails = () => {
             <Container>
                 <ContainerImg>
                     <ImagePoke
-                        src='https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png' 
+                        src={pokeImage} 
                         alt='poke'
                     />
                 </ContainerImg>
                 <ContainerDetails>
-                    <Name>Nom: testNane</Name>
-                    <Type>Type: testType</Type>
-                    <HeightAndWeight>Height : 20</HeightAndWeight>
-                    <HeightAndWeight>Weight : 10</HeightAndWeight>
-                    <Capacity>test1</Capacity>
-                    <Capacity>test2</Capacity>
-                    <Capacity>test3</Capacity>
+                    <Name>Nom: {pokeId.name}</Name>
+                    <Type>Type: {pokeDetails.types.map(res => res.type.name).join(' ')}</Type>
+                    <HeightAndWeight>Height : {pokeDetails.height}</HeightAndWeight>
+                    <HeightAndWeight>Weight : {pokeDetails.weight}</HeightAndWeight>
+                    {pokeAbility.abilities.map(res => 
+                        <Capacity key={res.ability.name}>{res.ability.name}</Capacity>)}
                 </ContainerDetails>
             </Container>
+            <RetourHome>
+                <LinkRetourHome href="/">Retour page Home</LinkRetourHome>
+            </RetourHome>
         </StyledDetails>
     )
 }
