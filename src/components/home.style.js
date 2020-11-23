@@ -17,6 +17,11 @@ export const Container = styled.div`
         background-color: grey;
         color: white;
     }
+    @media screen and (max-width: 640px) {
+        width: 100%;
+        margin: 0.5rem 0.5rem;
+        padding-right: 0.5rem;
+    }
 `
 
 export const ImagePoke = styled.img`
@@ -27,6 +32,9 @@ export const ImagePoke = styled.img`
 
 export const TitlePoke = styled.p`
     margin-left: -20rem;
+    @media screen and (max-width: 640px) {
+        margin-left: -12rem;
+    }
 `
 
 export const IndexPoke = styled.p`

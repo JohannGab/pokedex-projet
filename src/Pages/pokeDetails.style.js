@@ -14,6 +14,10 @@ export const ContainerImg = styled.div`
     margin-right: 4rem;
     width: 25rem;
     justify-content: center;
+    @media screen and (max-width: 640px) {
+        width: 10rem;
+        margin-right: 1rem;
+    }
 `
 
 export const ImagePoke = styled.img`
@@ -34,6 +38,9 @@ export const HeightAndWeight = styled.p`
 export const Capacity = styled.p`
     border: solid 1px grey;
     padding: 1rem 15rem;
+    @media screen and (max-width: 640px) {
+        padding: 0;
+    }
 `
 export const RetourHome = styled.div`
     margin-top: 5rem;
