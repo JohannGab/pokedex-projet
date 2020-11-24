@@ -1,10 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from './title';
-import {StyledHome, Container, TitlePoke, ImagePoke, IndexPoke} from './home.style'
+import {
+    ContainerInput,
+    Input,
+    StyledHome,
+    Container,
+    TitlePoke, 
+    ImagePoke,
+    IndexPoke,
+ } from './home.style'
 
 const AllPoke = ({ data, activatOpenAndClose }) => {
+    const [filterPoke, setFilterPoke] = useState(data)
+    useEffect(() => {
+        setFilterPoke(data)
+    }, [data])
     const defaultImg = 'https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png'
-    
+    const searchPoke = ({ listName = [], value = '' }) => listName
+    .filter(name => name.name.toLowerCase().indexOf(value.toLowerCase()) !== -1)
+
+    const handleSearch = (value) => {
+        try {
+            const res = searchPoke({
+                listName: filterPoke,
+                value
+            })
+            if (value) {
+                setFilterPoke(res)
+            } 
+            else {
+                return setFilterPoke(data)
+            }
+            } catch(err) {
+                return null
+            }
+        }
+
     return (
         <div>
             <Title 
@@ -12,7 +43,10 @@ const AllPoke = ({ data, activatOpenAndClose }) => {
                 ColorLine= 'white'
                 ColorTitle = 'black'
             />
-            {data.map(res => 
+            <ContainerInput>
+                <Input onChange={(e) => handleSearch(e.target.value)}></Input>
+            </ContainerInput>
+            {filterPoke.map(res => 
                 <StyledHome  key={res.id}>
                     <Container onClick={() => activatOpenAndClose(res.id +1)}>
                         <ImagePoke 

@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 
+export const ContainerInput = styled.div`
+    text-align: center;
+    margin: 0 0 2rem 0;
+`
+
+export const Input = styled.input`
+    padding: 0.5rem 1rem;
+    border: solid 2px grey;
+    border-radius: 1rem;
+    :focus {
+        outline:none;
+    }
+`
+
 export const StyledHome = styled.div`
     display: flex;
     justify-content: center;
