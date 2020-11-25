@@ -22,7 +22,7 @@ const AllPoke = ({ data, activatOpenAndClose }) => {
     const handleSearch = (value) => {
         try {
             const res = searchPoke({
-                listName: filterPoke,
+                listName: data,
                 value
             })
             if (value) {
